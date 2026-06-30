@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anikait Sehwag — Software Engineer</title>
+  <meta name="description"
+    content="Portfolio of Anikait Sehwag — Detail-oriented Software Engineer Intern with expertise in C++, Data Structures, Machine Learning, Distributed Systems, and Full-Stack Development." />
+  <meta name="keywords"
+    content="Anikait Sehwag, Software Engineer, Portfolio, Full-Stack Developer, Machine Learning, Web3" />
+  <meta name="author" content="Anikait Sehwag" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anikait Sehwag — Software Engineer" />
+  <meta property="og:description"
+    content="Detail-oriented Software Engineer Intern specializing in C++, Distributed Systems, and Full-Stack Development." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- ═══════════ CURSOR GLOW ═══════════ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ═══════════ NAVIGATION ═══════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-bracket">&lt;</span>AS<span class="nav__logo-bracket"> /&gt;</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#skills" class="nav__link">Skills</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#education" class="nav__link">Education</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+      <a href="#contact" class="nav__cta">Let's Talk</a>
+      <button class="nav__hamburger" id="navHamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════ MOBILE MENU ═══════════ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu__links">
+      <a href="#about" class="mobile-menu__link">About</a>
+      <a href="#skills" class="mobile-menu__link">Skills</a>
+      <a href="#experience" class="mobile-menu__link">Experience</a>
+      <a href="#projects" class="mobile-menu__link">Projects</a>
+      <a href="#education" class="mobile-menu__link">Education</a>
+      <a href="#contact" class="mobile-menu__link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-grid"></div>
+    <div class="hero__particles" id="heroParticles"></div>
+    <div class="hero__container">
+      <div class="hero__content">
+        <div class="hero__badge reveal">
+          <span class="hero__badge-dot"></span>
+          Open to Opportunities
+        </div>
+        <h1 class="hero__title reveal">
+          Hi, I'm <span class="hero__name">Anikait Sehwag</span>
+        </h1>
+        <p class="hero__subtitle reveal">
+          <span class="hero__typewriter" id="typewriter"></span>
+          <span class="hero__cursor">|</span>
+        </p>
+        <p class="hero__description reveal">
+          Detail-oriented and analytical Software Engineer Intern with strong proficiency in
+          <strong>C++</strong> and a solid foundation in <strong>Data Structures and Algorithms</strong>.
+          Experienced in developing innovative solutions through hands-on projects in
+          <strong>Machine Learning</strong>, <strong>Distributed Systems</strong>, and
+          <strong>Full-Stack Development</strong>.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#projects" class="btn btn--primary">
+            <i class="ph ph-rocket-launch"></i>
+            View My Work
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <i class="ph ph-envelope-simple"></i>
+            Get In Touch
+          </a>
+        </div>
+        <div class="hero__stats reveal">
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="4">0</span>
+            <span class="hero__stat-label">Upstream PRs Merged</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="3">0</span>+
+            <span class="hero__stat-label">Major Projects</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="1">0</span>
+            <span class="hero__stat-label">GSoC Selection</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__visual reveal">
+        <div class="hero__avatar-wrapper">
+          <div class="hero__avatar-ring"></div>
+          <div class="hero__avatar-ring hero__avatar-ring--delayed"></div>
+          <img src="avatar.png" alt="Anikait Sehwag" class="hero__avatar" />
+        </div>
+        <div class="hero__floating-badges">
+          <div class="hero__floating-badge hero__floating-badge--1">
+            <i class="ph ph-code"></i> C++
+          </div>
+          <div class="hero__floating-badge hero__floating-badge--2">
+            <i class="ph ph-brain"></i> ML
+          </div>
+          <div class="hero__floating-badge hero__floating-badge--3">
+            <i class="ph ph-globe"></i> Web3
+          </div>
+          <div class="hero__floating-badge hero__floating-badge--4">
+            <i class="ph ph-git-branch"></i> Open Source
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="hero__scroll-indicator">
+      <span>Scroll Down</span>
+      <i class="ph ph-caret-double-down"></i>
+    </a>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section class="section about" id="about">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag"><i class="ph ph-user"></i> About Me</span>
+        <h2 class="section__title">Turning Complex Problems Into <span class="gradient-text">Elegant Solutions</span>
+        </h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>
+            I'm a final-year <strong>B.Tech student in Computer Science &amp; Engineering (AI)</strong> at
+            Netaji Subhas University of Technology, New Delhi. My journey in tech has been driven by a deep
+            curiosity for building systems that are both performant and impactful.
+          </p>
+          <p>
+            As a <strong>Google Summer of Code 2025</strong> contributor at the Ceph Foundation, I've had the
+            privilege of contributing to one of the largest open-source distributed storage systems in the world.
+            From building real-time Web3 analytics platforms to developing AI-powered medical diagnosis systems,
+            I thrive at the intersection of cutting-edge technology and real-world impact.
+          </p>
+          <p>
+            When I'm not coding, you'll find me on the football field as the <strong>Captain of the NSUT Football
+              Team</strong>,
+            leading squad tactics and managing player deployments during high-stakes inter-university tournaments.
+          </p>
+        </div>
+        <div class="about__highlights reveal">
+          <div class="about__highlight-card">
+            <i class="ph-fill ph-google-logo"></i>
+            <h3>GSoC '25</h3>
+            <p>Google Summer of Code Contributor</p>
+          </div>
+          <div class="about__highlight-card">
+            <i class="ph-fill ph-trophy"></i>
+            <h3>Hackathon Winner</h3>
+            <p>International Web3 × AI Showcase</p>
+          </div>
+          <div class="about__highlight-card">
+            <i class="ph-fill ph-git-pull-request"></i>
+            <h3>Open Source</h3>
+            <p>4 Major PRs Merged at Ceph</p>
+          </div>
+          <div class="about__highlight-card">
+            <i class="ph-fill ph-soccer-ball"></i>
+            <h3>Team Captain</h3>
+            <p>NSUT Football Team</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SKILLS ═══════════ -->
+  <section class="section skills" id="skills">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag"><i class="ph ph-lightning"></i> Skills & Technologies</span>
+        <h2 class="section__title">My <span class="gradient-text">Tech Arsenal</span></h2>
+      </div>
+
+      <div class="skills__categories">
+        <!-- Languages & Frameworks -->
+        <div class="skills__category reveal">
+          <div class="skills__category-header">
+            <i class="ph ph-code"></i>
+            <h3>Languages &amp; Frameworks</h3>
+          </div>
+          <div class="skills__tags">
+            <span class="skill-tag" data-level="expert">C++</span>
+            <span class="skill-tag" data-level="expert">Python</span>
+            <span class="skill-tag" data-level="advanced">C</span>
+            <span class="skill-tag" data-level="advanced">JavaScript</span>
+            <span class="skill-tag" data-level="advanced">TypeScript</span>
+            <span class="skill-tag" data-level="intermediate">SQL</span>
+            <span class="skill-tag" data-level="advanced">HTML</span>
+            <span class="skill-tag" data-level="advanced">CSS</span>
+            <span class="skill-tag" data-level="advanced">React</span>
+            <span class="skill-tag" data-level="intermediate">Express</span>
+            <span class="skill-tag" data-level="advanced">Next.js</span>
+            <span class="skill-tag" data-level="advanced">Angular</span>
+            <span class="skill-tag" data-level="intermediate">Flask</span>
+          </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="skills__category reveal">
+          <div class="skills__category-header">
+            <i class="ph ph-wrench"></i>
+            <h3>Tools &amp; Technologies</h3>
+          </div>
+          <div class="skills__tags">
+            <span class="skill-tag" data-level="expert">DSA</span>
+            <span class="skill-tag" data-level="advanced">Distributed Systems</span>
+            <span class="skill-tag" data-level="advanced">Git</span>
+            <span class="skill-tag" data-level="intermediate">Docker</span>
+            <span class="skill-tag" data-level="advanced">RESTful APIs</span>
+            <span class="skill-tag" data-level="advanced">Linux/Unix</span>
+            <span class="skill-tag" data-level="intermediate">AWS</span>
+            <span class="skill-tag" data-level="intermediate">Hardhat</span>
+            <span class="skill-tag" data-level="advanced">PyTorch</span>
+            <span class="skill-tag" data-level="advanced">OpenCV</span>
+            <span class="skill-tag" data-level="intermediate">Gemini API</span>
+            <span class="skill-tag" data-level="intermediate">DBSCAN</span>
+            <span class="skill-tag" data-level="intermediate">LaTeX</span>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skills__category reveal">
+          <div class="skills__category-header">
+            <i class="ph ph-database"></i>
+            <h3>Databases</h3>
+          </div>
+          <div class="skills__tags">
+            <span class="skill-tag" data-level="advanced">MongoDB</span>
+            <span class="skill-tag" data-level="advanced">PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- Fundamentals -->
+        <div class="skills__category reveal">
+          <div class="skills__category-header">
+            <i class="ph ph-book-open"></i>
+            <h3>Core Fundamentals</h3>
+          </div>
+          <div class="skills__tags">
+            <span class="skill-tag" data-level="expert">OOP</span>
+            <span class="skill-tag" data-level="advanced">Operating Systems</span>
+            <span class="skill-tag" data-level="advanced">DBMS</span>
+            <span class="skill-tag" data-level="advanced">Computer Networks</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill level legend -->
+      <div class="skills__legend reveal">
+        <div class="skills__legend-item">
+          <span class="skill-tag skill-tag--legend" data-level="expert"></span> Expert
+        </div>
+        <div class="skills__legend-item">
+          <span class="skill-tag skill-tag--legend" data-level="advanced"></span> Advanced
+        </div>
+        <div class="skills__legend-item">
+          <span class="skill-tag skill-tag--legend" data-level="intermediate"></span> Intermediate
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EXPERIENCE ═══════════ -->
+  <section class="section experience" id="experience">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag"><i class="ph ph-briefcase"></i> Experience</span>
+        <h2 class="section__title">Where I've <span class="gradient-text">Made an Impact</span></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__line"></div>
+        <div class="timeline__item reveal">
+          <div class="timeline__marker">
+            <div class="timeline__marker-dot"></div>
+          </div>
+          <div class="timeline__card">
+            <div class="timeline__card-header">
+              <div class="timeline__card-meta">
+                <span class="timeline__date">
+                  <i class="ph ph-calendar"></i>
+                  June 2025 — Sept 2025
+                </span>
+                <span class="timeline__location">
+                  <i class="ph ph-map-pin"></i>
+                  India (Remote)
+                </span>
+              </div>
+              <div class="timeline__card-badge">GSoC '25</div>
+            </div>
+            <h3 class="timeline__role">Software Engineering Intern</h3>
+            <h4 class="timeline__company">Ceph Foundation — <em>Google Summer of Code 2025</em></h4>
+            <ul class="timeline__responsibilities">
+              <li>
+                Contributed core monitoring and automation capabilities to the <strong>Ceph Dashboard</strong>,
+                an open-source management console for petabyte-scale distributed storage systems hosted on Linux.
+              </li>
+              <li>
+                Implemented a centralized notification debugging interface and engineered automated management
+                workflows for NVMe-oF target networks using <strong>Angular</strong> and <strong>Python</strong>.
+              </li>
+              <li>
+                Authored targeted integration test suites for backend APIs, directly validating network request
+                lifecycles and resolving edge-case regressions before upstream releases.
+              </li>
+              <li>
+                Shipped production-ready code across <strong>4 major upstream Pull Requests</strong> reviewed and
+                merged by global maintainers (PR #64707, PR #64587, PR #64375, PR #64190).
+              </li>
+            </ul>
+            <div class="timeline__tech-tags">
+              <span>Angular</span>
+              <span>Python</span>
+              <span>Ceph</span>
+              <span>Linux</span>
+              <span>NVMe-oF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROJECTS ═══════════ -->
+  <section class="section projects" id="projects">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag"><i class="ph ph-folder-notch-open"></i> Projects</span>
+        <h2 class="section__title">Things I've <span class="gradient-text">Built</span></h2>
+      </div>
+
+      <div class="projects__grid">
+        <!-- ZoRosetta -->
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-cube"></i>
+            </div>
+            <div class="project-card__links">
+              <span class="project-card__featured">🏆 Hackathon Winner</span>
+            </div>
+          </div>
+          <h3 class="project-card__title">ZoRosetta</h3>
+          <p class="project-card__description">
+            A Web3 application tracking real-time on-chain data trends and creator analytics utilizing the
+            Zora network infrastructure. Secured formal ecosystem grant funding after winning an international
+            Web3 × AI developer hackathon showcase.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Built a server-side rendered frontend architecture using Next.js, reducing initial page load times
+              (TTFB) during high-traffic intervals.</li>
+            <li>Structured asynchronous data ingestion pipelines to handle up to 5000+ concurrent analytical queries
+              against distributed node networks without connection drops.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>Zora SDK</span>
+            <span>Web3</span>
+          </div>
+        </article>
+
+        <!-- AI Medical Diagnosis System -->
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-heartbeat"></i>
+            </div>
+            <div class="project-card__links">
+              <span class="project-card__featured">🧠 AI / ML</span>
+            </div>
+          </div>
+          <h3 class="project-card__title">AI Medical Diagnosis System</h3>
+          <p class="project-card__description">
+            An intelligent diagnostics system utilizing unsupervised DBSCAN clustering to group 30+
+            multi-modal symptom inputs and uncover latent pattern similarities for potential condition identification.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Integrated the Gemini API to parse cluster anomalies and construct tailored, clear preventative
+              recommendations that improve user medical transparency.</li>
+            <li>Implemented an on-demand report engine that auto-compiles user diagnostics summaries into downloadable,
+              professionally formatted LaTeX documents in under 2 seconds.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>DBSCAN</span>
+            <span>Gemini API</span>
+            <span>Python</span>
+            <span>LaTeX</span>
+          </div>
+        </article>
+
+        <!-- Greefy -->
+        <article class="project-card reveal">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-video-camera"></i>
+            </div>
+            <div class="project-card__links">
+              <span class="project-card__featured">👁️ Computer Vision</span>
+            </div>
+          </div>
+          <h3 class="project-card__title">Greefy</h3>
+          <p class="project-card__description">
+            An end-to-end computer vision pipeline utilizing hybrid CNN-LSTM architectures and OpenCV for
+            automated event extraction from raw sports video feeds.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Designed a modular batch inference service wrapped in Flask APIs, accelerating raw media batch
+              processing speeds by 17% for downstream analytical ingestion.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Python</span>
+            <span>OpenCV</span>
+            <span>PyTorch</span>
+            <span>Flask</span>
+            <span>PostgreSQL</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EDUCATION ═══════════ -->
+  <section class="section education" id="education">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag"><i class="ph ph-graduation-cap"></i> Education</span>
+        <h2 class="section__title">Academic <span class="gradient-text">Background</span></h2>
+      </div>
+
+      <div class="education__card reveal">
+        <div class="education__card-accent"></div>
+        <div class="education__card-content">
+          <div class="education__icon">
+            <i class="ph ph-buildings"></i>
+          </div>
+          <div class="education__info">
+            <h3 class="education__institution">Netaji Subhas University of Technology (NSUT)</h3>
+            <p class="education__location"><i class="ph ph-map-pin"></i> New Delhi, India</p>
+            <p class="education__degree">B.Tech in Computer Science and Engineering (Artificial Intelligence)</p>
+            <div class="education__period">
+              <i class="ph ph-calendar"></i>
+              <span>2022 — 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="section__subheader reveal">
+        <h3>Achievements &amp; Certifications</h3>
+      </div>
+      <div class="achievements__grid">
+        <div class="achievement-card reveal">
+          <div class="achievement-card__icon">
+            <i class="ph-fill ph-globe-hemisphere-west"></i>
+          </div>
+          <div class="achievement-card__content">
+            <h4>Google Summer of Code 2025</h4>
+            <p>Selected from a worldwide applicant pool to develop system-level features for the Ceph Foundation.</p>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-card__icon">
+            <i class="ph-fill ph-trophy"></i>
+          </div>
+          <div class="achievement-card__content">
+            <h4>Hackathon Winner</h4>
+            <p>Awarded venture/ecosystem grant backing for ZoRosetta during an international Web3 × AI application
+              showcase.</p>
+          </div>
+        </div>
+        <div class="achievement-card reveal">
+          <div class="achievement-card__icon">
+            <i class="ph-fill ph-calendar-check"></i>
+          </div>
+          <div class="achievement-card__content">
+            <h4>Event Management</h4>
+            <p>Core Member of NSUT's flagship cultural fest "Moksha"; successfully co-managed logistics operations and a
+              structural budget of Rs. 90 Lakhs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section class="section contact" id="contact">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag"><i class="ph ph-chat-circle"></i> Contact</span>
+        <h2 class="section__title">Let's Work <span class="gradient-text">Together</span></h2>
+        <p class="section__description">
+          I'm always open to discussing new opportunities, interesting projects, or just having a chat about tech.
+        </p>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__methods">
+          <a href="mailto:anikait.sehwag.ug22@nsut.ac.in" class="contact__card reveal">
+            <div class="contact__card-icon">
+              <i class="ph ph-envelope-simple"></i>
+            </div>
+            <div class="contact__card-info">
+              <h4>Email</h4>
+              <p>anikait.sehwag.ug22@nsut.ac.in</p>
+            </div>
+            <i class="ph ph-arrow-up-right contact__card-arrow"></i>
+          </a>
+          <a href="tel:+917982388081" class="contact__card reveal">
+            <div class="contact__card-icon">
+              <i class="ph ph-phone"></i>
+            </div>
+            <div class="contact__card-info">
+              <h4>Phone</h4>
+              <p>+91-7982388081</p>
+            </div>
+            <i class="ph ph-arrow-up-right contact__card-arrow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/anikait-sehwag-00b427243/" target="_blank" rel="noopener noreferrer"
+            class="contact__card reveal">
+            <div class="contact__card-icon">
+              <i class="ph ph-linkedin-logo"></i>
+            </div>
+            <div class="contact__card-info">
+              <h4>LinkedIn</h4>
+              <p>Connect with me</p>
+            </div>
+            <i class="ph ph-arrow-up-right contact__card-arrow"></i>
+          </a>
+          <a href="https://github.com/sundownrises" target="_blank" rel="noopener noreferrer"
+            class="contact__card reveal">
+            <div class="contact__card-icon">
+              <i class="ph ph-github-logo"></i>
+            </div>
+            <div class="contact__card-info">
+              <h4>GitHub</h4>
+              <p>Check out my repos</p>
+            </div>
+            <i class="ph ph-arrow-up-right contact__card-arrow"></i>
+          </a>
+        </div>
+
+        <div class="contact__form-wrapper reveal">
+          <form class="contact__form" id="contactForm">
+            <input type="hidden" name="access_key" value="9b5aeb09-ca4e-4882-b744-f00fbe8aa89e" />
+            <div class="form__group">
+              <label for="contactName" class="form__label">Name</label>
+              <input type="text" id="contactName" name="name" class="form__input" placeholder="Your name" required />
+            </div>
+            <div class="form__group">
+              <label for="contactEmail" class="form__label">Email</label>
+              <input type="email" id="contactEmail" name="email" class="form__input" placeholder="your@email.com"
+                required />
+            </div>
+            <div class="form__group">
+              <label for="contactMessage" class="form__label">Message</label>
+              <textarea id="contactMessage" name="message" class="form__input form__textarea"
+                placeholder="Tell me about your project..." rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" id="contactSubmit">
+              <i class="ph ph-paper-plane-tilt"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <a href="#hero" class="footer__logo">
+          <span class="nav__logo-bracket">&lt;</span>AS<span class="nav__logo-bracket"> /&gt;</span>
+        </a>
+        <div class="footer__socials">
+          <a href="https://github.com/sundownrises" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="ph ph-github-logo"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/anikait-sehwag-00b427243/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+          <a href="mailto:anikait.sehwag.ug22@nsut.ac.in" aria-label="Email">
+            <i class="ph ph-envelope-simple"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer__divider"></div>
+      <p class="footer__copy">&copy; 2026 Anikait Sehwag. Built with passion &amp; purpose.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
