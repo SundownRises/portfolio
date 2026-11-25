@@ -46,6 +46,7 @@
         <a href="#experience" class="nav__link">Experience</a>
         <a href="#projects" class="nav__link">Projects</a>
         <a href="#education" class="nav__link">Education</a>
+        <a href="#resume" class="nav__link">Resume</a>
         <a href="#contact" class="nav__link">Contact</a>
       </nav>
       <a href="#contact" class="nav__cta">Let's Talk</a>
@@ -65,6 +66,7 @@
       <a href="#experience" class="mobile-menu__link">Experience</a>
       <a href="#projects" class="mobile-menu__link">Projects</a>
       <a href="#education" class="mobile-menu__link">Education</a>
+      <a href="#resume" class="mobile-menu__link">Resume</a>
       <a href="#contact" class="mobile-menu__link">Contact</a>
     </nav>
   </div>
@@ -109,8 +111,8 @@
             <span class="hero__stat-label">Upstream PRs Merged</span>
           </div>
           <div class="hero__stat">
-            <span class="hero__stat-number" data-count="3">0</span>+
-            <span class="hero__stat-label">Major Projects</span>
+            <span class="hero__stat-number" data-count="15">0</span>+
+            <span class="hero__stat-label">Projects Shipped</span>
           </div>
           <div class="hero__stat">
             <span class="hero__stat-number" data-count="1">0</span>
@@ -365,18 +367,96 @@
         <h2 class="section__title">Things I've <span class="gradient-text">Built</span></h2>
       </div>
 
-      <div class="projects__grid">
-        <!-- ZoRosetta -->
-        <article class="project-card reveal">
+      <!-- Category filters -->
+      <div class="projects__filters reveal" id="projectFilters">
+        <button class="filter-chip filter-chip--active" data-filter="all">
+          All <span class="filter-chip__count">15</span>
+        </button>
+        <button class="filter-chip" data-filter="opensource">
+          <i class="ph ph-git-pull-request"></i> Open Source <span class="filter-chip__count">1</span>
+        </button>
+        <button class="filter-chip" data-filter="ai">
+          <i class="ph ph-brain"></i> AI &amp; ML <span class="filter-chip__count">4</span>
+        </button>
+        <button class="filter-chip" data-filter="web3">
+          <i class="ph ph-cube"></i> Web3 &amp; Hackathons <span class="filter-chip__count">6</span>
+        </button>
+        <button class="filter-chip" data-filter="tools">
+          <i class="ph ph-wrench"></i> Tools &amp; Apps <span class="filter-chip__count">4</span>
+        </button>
+      </div>
+
+      <div class="projects__grid" id="projectsGrid">
+        <!-- Ceph Dashboard — Notification System -->
+        <article class="project-card project-card--featured reveal" data-category="opensource">
           <div class="project-card__glow"></div>
           <div class="project-card__header">
             <div class="project-card__icon">
-              <i class="ph ph-cube"></i>
+              <i class="ph ph-git-pull-request"></i>
             </div>
-            <div class="project-card__links">
-              <span class="project-card__featured">🏆 Hackathon Winner</span>
+            <div class="project-card__actions">
+              <a href="https://github.com/ceph/ceph/pulls?q=is%3Apr+author%3Asundownrises+is%3Amerged"
+                target="_blank" rel="noopener noreferrer" class="project-card__action"
+                aria-label="View merged Ceph pull requests">
+                <i class="ph ph-github-logo"></i>
+              </a>
+              <a href="https://docs.ceph.com" target="_blank" rel="noopener noreferrer" class="project-card__action"
+                aria-label="Ceph documentation">
+                <i class="ph ph-arrow-square-out"></i>
+              </a>
             </div>
           </div>
+          <span class="project-card__badge project-card__badge--gold">
+            <i class="ph-fill ph-trophy"></i> GSoC '25 &middot; 4 PRs Merged
+          </span>
+          <h3 class="project-card__title">Ceph Dashboard — Notification System</h3>
+          <p class="project-card__description">
+            Rebuilt the notification stack of the Ceph Dashboard, the management console for one of the world's
+            largest open-source distributed storage systems. Four pull requests reviewed and merged into
+            <code>ceph/ceph</code> main by global maintainers.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Migrated the toast, header, notification area, and footer components to IBM's Carbon Design System
+              across ~3,000 added lines in 96 files.</li>
+            <li>Authored integration test suites validating backend API request lifecycles, catching edge-case
+              regressions before upstream release.</li>
+          </ul>
+          <div class="project-card__prs">
+            <a href="https://github.com/ceph/ceph/pull/64190" target="_blank" rel="noopener noreferrer">#64190</a>
+            <a href="https://github.com/ceph/ceph/pull/64375" target="_blank" rel="noopener noreferrer">#64375</a>
+            <a href="https://github.com/ceph/ceph/pull/64587" target="_blank" rel="noopener noreferrer">#64587</a>
+            <a href="https://github.com/ceph/ceph/pull/64707" target="_blank" rel="noopener noreferrer">#64707</a>
+          </div>
+          <div class="project-card__tech">
+            <span>Angular</span>
+            <span>TypeScript</span>
+            <span>Carbon Design System</span>
+            <span>Python</span>
+            <span>Linux</span>
+          </div>
+        </article>
+
+        <!-- ZoRosetta -->
+        <article class="project-card project-card--featured reveal" data-category="web3">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-chart-line-up"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/ATV3320/ZoRosetta" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="ZoRosetta on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+              <a href="https://zo-rosetta.vercel.app" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="ZoRosetta live site">
+                <i class="ph ph-arrow-square-out"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge project-card__badge--gold">
+            <i class="ph-fill ph-trophy"></i> Winner &middot; Web3 × AI Showcase
+          </span>
           <h3 class="project-card__title">ZoRosetta</h3>
           <p class="project-card__description">
             A Web3 application tracking real-time on-chain data trends and creator analytics utilizing the
@@ -397,17 +477,136 @@
           </div>
         </article>
 
+        <!-- Telegram Drive -->
+        <article class="project-card project-card--featured reveal" data-category="tools">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-cloud-arrow-up"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/Telegram-Drive" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Telegram Drive on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+              <a href="https://github.com/sundownrises/Telegram-Drive/releases" target="_blank"
+                rel="noopener noreferrer" class="project-card__action" aria-label="Telegram Drive releases">
+                <i class="ph ph-download-simple"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge project-card__badge--ship">
+            <i class="ph ph-package"></i> Shipped &middot; 4 Platforms
+          </span>
+          <h3 class="project-card__title">Telegram Drive</h3>
+          <p class="project-card__description">
+            A cross-platform file manager that turns a Telegram account into a personal cloud drive. It presents a
+            desktop-style workspace over Saved Messages and channels, with no server of its own in the middle.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Rust core behind a React workspace via Tauri — uploads, downloads, folders, previews, media
+              streaming, themes, and localization, shipped as native builds for four platforms.</li>
+            <li>Connects directly to Telegram with user-supplied API credentials, plus a local REST API and an
+              opt-in encrypted-transfer mode.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Tauri</span>
+            <span>Rust</span>
+            <span>React</span>
+            <span>TypeScript</span>
+          </div>
+        </article>
+
+        <!-- CodeAgent -->
+        <article class="project-card reveal" data-category="ai">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-robot"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/ConversAllabs" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="ConversAllabs on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge">
+            <i class="ph ph-sparkle"></i> Autonomous Agent
+          </span>
+          <h3 class="project-card__title">CodeAgent</h3>
+          <p class="project-card__description">
+            An AI coding agent you point at a repository it has never seen. Given a plain-English task, it explores
+            the codebase, plans a change, edits the code, proves it did not break anything, and reports what it did.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Repository-agnostic by design — the same command and zero code changes handle any target repo or
+              task, with no hardcoded knowledge of either.</li>
+            <li>Closes the loop with a verification stage, so the agent reports only changes it has proven do not
+              regress the existing test suite.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Python</span>
+            <span>Anthropic API</span>
+            <span>LLM Agents</span>
+            <span>Static Analysis</span>
+          </div>
+        </article>
+
+        <!-- AIVOA — Complaint Intake -->
+        <article class="project-card reveal" data-category="ai">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-first-aid-kit"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/aivoa" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="AIVOA on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge">
+            <i class="ph ph-stack"></i> Full-Stack &middot; Regulated Domain
+          </span>
+          <h3 class="project-card__title">AIVOA — Complaint Intake</h3>
+          <p class="project-card__description">
+            An AI-assisted intake module for pharmaceutical customer complaints. Officers upload or paste a
+            complaint; the system extracts structured fields, assesses them, and files a reviewable draft into the
+            quality management system.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Built on an explicit, documented domain model — settled vocabulary for every stage of the complaint
+              lifecycle, enforced in code, comments, and commits.</li>
+            <li>Python extraction pipeline behind a TypeScript review interface, containerised end-to-end for
+              reproducible deployment.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Python</span>
+            <span>TypeScript</span>
+            <span>Docker</span>
+            <span>LLM Extraction</span>
+          </div>
+        </article>
+
         <!-- AI Medical Diagnosis System -->
-        <article class="project-card reveal">
+        <article class="project-card reveal" data-category="ai">
           <div class="project-card__glow"></div>
           <div class="project-card__header">
             <div class="project-card__icon">
               <i class="ph ph-heartbeat"></i>
             </div>
-            <div class="project-card__links">
-              <span class="project-card__featured">🧠 AI / ML</span>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/AI-Medical-Diagnosis" target="_blank"
+                rel="noopener noreferrer" class="project-card__action" aria-label="AI Medical Diagnosis on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
             </div>
           </div>
+          <span class="project-card__badge">
+            <i class="ph ph-brain"></i> Unsupervised ML
+          </span>
           <h3 class="project-card__title">AI Medical Diagnosis System</h3>
           <p class="project-card__description">
             An intelligent diagnostics system utilizing unsupervised DBSCAN clustering to group 30+
@@ -428,33 +627,353 @@
         </article>
 
         <!-- Greefy -->
-        <article class="project-card reveal">
+        <article class="project-card reveal" data-category="ai">
           <div class="project-card__glow"></div>
           <div class="project-card__header">
             <div class="project-card__icon">
               <i class="ph ph-video-camera"></i>
             </div>
-            <div class="project-card__links">
-              <span class="project-card__featured">👁️ Computer Vision</span>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/greefy" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Greefy on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
             </div>
           </div>
+          <span class="project-card__badge">
+            <i class="ph ph-eye"></i> Computer Vision
+          </span>
           <h3 class="project-card__title">Greefy</h3>
           <p class="project-card__description">
-            An end-to-end computer vision pipeline utilizing hybrid CNN-LSTM architectures and OpenCV for
-            automated event extraction from raw sports video feeds.
+            An automated highlight extraction system for game footage, built around a feedforward neural
+            network written from scratch in NumPy — sigmoid activations, hand-written backpropagation, no
+            deep-learning framework — that classifies whether a frame contains a kill.
           </p>
           <ul class="project-card__highlights">
-            <li>Designed a modular batch inference service wrapped in Flask APIs, accelerating raw media batch
-              processing speeds by 17% for downstream analytical ingestion.</li>
+            <li>Modular video processing pipeline in FastAPI with FFmpeg integration, handling frame extraction,
+              model inference, and automated clip generation with per-game configurable cut timing.</li>
+            <li>A second detection path covers titles without a trained model, pairing EasyOCR on the kill feed
+              with OpenCV template matching — five titles supported in total.</li>
           </ul>
           <div class="project-card__tech">
             <span>Python</span>
-            <span>OpenCV</span>
-            <span>PyTorch</span>
-            <span>Flask</span>
-            <span>PostgreSQL</span>
+            <span>NumPy</span>
+            <span>SciPy</span>
+            <span>FastAPI</span>
+            <span>MongoDB</span>
+            <span>FFmpeg</span>
+            <span>Svelte</span>
           </div>
         </article>
+
+        <!-- Perpetua -->
+        <article class="project-card reveal" data-category="web3">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-currency-btc"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/perpetua" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Perpetua on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+              <a href="https://perpetua-chi.vercel.app" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Perpetua live site">
+                <i class="ph ph-arrow-square-out"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge">
+            <i class="ph ph-lightning"></i> Mezo Buildathon &middot; DeFi Track
+          </span>
+          <h3 class="project-card__title">Perpetua</h3>
+          <p class="project-card__description">
+            Liquid veBTC with an MUSD coupon. Deposit BTC once and it joins a single, permanently-locked veBTC
+            position that votes as a bloc on Mezo's MUSD gauges, then streams the fees that vote earns back to
+            holders of a liquid ERC-20.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Solidity vote-escrow aggregation layer paired with a dashboard that reads every displayed figure
+              directly from on-chain state — no cached backend.</li>
+            <li>Deployed and verified on Mezo testnet with a full Hardhat test suite.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Solidity</span>
+            <span>Hardhat</span>
+            <span>TypeScript</span>
+            <span>Mezo</span>
+          </div>
+        </article>
+
+        <!-- Nexus -->
+        <article class="project-card reveal" data-category="web3">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-strategy"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/Nexus" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Nexus on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+              <a href="https://nexus-nine-bay.vercel.app" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Nexus live site">
+                <i class="ph ph-arrow-square-out"></i>
+              </a>
+            </div>
+          </div>
+          <!-- TODO: replace with the actual hackathon name + placement -->
+          <span class="project-card__badge">
+            <i class="ph ph-lightning"></i> Hackathon Build
+          </span>
+          <h3 class="project-card__title">Nexus</h3>
+          <p class="project-card__description">
+            An on-chain agent protocol. Users deposit into a non-custodial vault and grant execution rights to
+            whitelisted AI "Strategist" agents, which monitor market conditions off-chain and trigger DeFi
+            strategies on their behalf.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Solidity layer of an <code>AgentRegistry</code> factory minting Strategist NFTs and a
+              <code>Vault</code> that keeps user funds non-custodial while scoping agent permissions.</li>
+            <li>Off-chain Python strategists watch DEX yields and either auto-execute or surface a one-click
+              "Execute Strategy" action in the dashboard.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Solidity</span>
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>Python</span>
+          </div>
+        </article>
+
+        <!-- NeroBianca -->
+        <article class="project-card reveal" data-category="web3">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-game-controller"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/NeroBianca" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="NeroBianca on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+            </div>
+          </div>
+          <!-- TODO: replace with the actual hackathon name + placement -->
+          <span class="project-card__badge">
+            <i class="ph ph-lightning"></i> Hackathon Build
+          </span>
+          <h3 class="project-card__title">NeroBianca</h3>
+          <p class="project-card__description">
+            A trustless marketplace for in-game items and account data, built on NERO Chain. Gaming deals should
+            be black and white, not gray.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Account Abstraction onboarding — users sign in with email or OAuth and a smart-contract wallet is
+              deployed invisibly, with no native tokens or wallet setup required.</li>
+            <li>Paymaster-sponsored gas and trustless escrow, so neither buyer nor seller has to trust the other
+              to settle a trade.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>NERO Chain</span>
+            <span>Account Abstraction</span>
+            <span>Paymaster</span>
+            <span>Solidity</span>
+          </div>
+        </article>
+
+        <!-- Butter Payments -->
+        <article class="project-card reveal" data-category="web3">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-wallet"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/butter-payments" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Butter Payments on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge">
+            <i class="ph ph-lightning"></i> Monad Blitz Delhi
+          </span>
+          <h3 class="project-card__title">Butter Payments</h3>
+          <p class="project-card__description">
+            A wallet experience built for smooth, low-cost transactions. No confusing wallet popups, no gas fee
+            anxiety — just fast payments that feel like magic.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Abstracts away the wallet-popup and gas-estimation steps that break checkout flows for
+              non-crypto-native users.</li>
+            <li>Contracts and client shipped inside a single hackathon window on Monad.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Solidity</span>
+            <span>TypeScript</span>
+            <span>Monad</span>
+            <span>Account Abstraction</span>
+          </div>
+        </article>
+
+        <!-- Primordium -->
+        <article class="project-card reveal" data-category="web3">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-hard-drives"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/primordium" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Primordium on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+              <!-- Live link removed: https://primordium-opal.vercel.app returns 404 (deployment gone).
+                   Redeploy it and restore the link here. -->
+
+            </div>
+          </div>
+          <!-- TODO: replace with the actual hackathon name + placement -->
+          <span class="project-card__badge">
+            <i class="ph ph-lightning"></i> Hackathon Build
+          </span>
+          <h3 class="project-card__title">Primordium</h3>
+          <p class="project-card__description">
+            A decentralized data layer with a wallet-native upload flow. Connect an account, push a file, and get
+            back a content root hash and transaction hash committing it on-chain.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Next.js App Router upload route wired to thirdweb account state, returning verifiable storage
+              proofs rather than opaque success messages.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>thirdweb</span>
+            <span>On-Chain Storage</span>
+          </div>
+        </article>
+
+        <!-- Page Pulse -->
+        <article class="project-card reveal" data-category="tools">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-gauge"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/page-pulse" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Page Pulse on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+              <a href="https://page-pulse-5bjo.onrender.com/" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="Page Pulse live service">
+                <i class="ph ph-arrow-square-out"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge project-card__badge--ship">
+            <i class="ph ph-broadcast"></i> Live Service &middot; CI
+          </span>
+          <h3 class="project-card__title">Page Pulse</h3>
+          <p class="project-card__description">
+            A URL audit service. Send it a page and it fetches, analyses, and returns structured results covering
+            performance, SEO, accessibility, and document structure.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Documented <code>POST /audit</code> contract with explicit request and response schemas, plus a
+              cache-bypass flag for forced re-audits.</li>
+            <li>Continuous integration on every push and a deployed public endpoint — not a local-only demo.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>TypeScript</span>
+            <span>Node.js</span>
+            <span>REST API</span>
+            <span>CI/CD</span>
+          </div>
+        </article>
+
+        <!-- LeetCode Company Tags Explorer -->
+        <article class="project-card reveal" data-category="tools">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-puzzle-piece"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/LeetcodeExtension" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="LeetCode Company Tags Explorer on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge">
+            <i class="ph ph-browser"></i> Browser Extension
+          </span>
+          <h3 class="project-card__title">LeetCode Company Tags Explorer</h3>
+          <p class="project-card__description">
+            A Chromium extension that surfaces all 3,500+ LeetCode problems with the companies that ask them,
+            live acceptance rates, and per-company frequency percentages — free and premium alike.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Filter by company, difficulty, and premium status, search by title or number, and sort on any
+              column, with data refreshing weekly.</li>
+            <li>Runs entirely on public endpoints and a community dataset — no API keys, no accounts, no
+              authentication.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>JavaScript</span>
+            <span>Manifest V3</span>
+            <span>Chrome APIs</span>
+          </div>
+        </article>
+
+        <!-- App Lock -->
+        <article class="project-card reveal" data-category="tools">
+          <div class="project-card__glow"></div>
+          <div class="project-card__header">
+            <div class="project-card__icon">
+              <i class="ph ph-lock-key"></i>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://github.com/sundownrises/App-Lock" target="_blank" rel="noopener noreferrer"
+                class="project-card__action" aria-label="App Lock on GitHub">
+                <i class="ph ph-github-logo"></i>
+              </a>
+            </div>
+          </div>
+          <span class="project-card__badge">
+            <i class="ph ph-device-mobile"></i> Android &middot; Kotlin
+          </span>
+          <h3 class="project-card__title">App Lock</h3>
+          <p class="project-card__description">
+            A native Android utility that gates access to individual apps behind authentication, built from a
+            clean domain layer upward rather than as a single-activity prototype.
+          </p>
+          <ul class="project-card__highlights">
+            <li>Separated core locking logic from the UI layer, with instrumented UI tests covering the navigation
+              flows.</li>
+            <li>GitHub Actions pipeline producing signed APK artifacts on every push.</li>
+          </ul>
+          <div class="project-card__tech">
+            <span>Kotlin</span>
+            <span>Android</span>
+            <span>Gradle</span>
+            <span>GitHub Actions</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="projects__footer reveal">
+        <a href="https://github.com/sundownrises" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+          <i class="ph ph-github-logo"></i>
+          See all repositories on GitHub
+        </a>
       </div>
     </div>
   </section>
@@ -522,6 +1041,140 @@
       </div>
     </div>
   </section>
+
+  <!-- ═══════════ RESUME ═══════════ -->
+  <section class="section resume" id="resume">
+    <div class="section__container">
+      <div class="section__header reveal">
+        <span class="section__tag"><i class="ph ph-file-text"></i> Resume</span>
+        <h2 class="section__title">Pick the <span class="gradient-text">Right Fit</span></h2>
+        <p class="section__description">
+          Six versions, each written for a different role. Choose the one that matches what you're hiring for —
+          then preview it here or download the PDF.
+        </p>
+      </div>
+
+      <div class="resume__picker reveal" id="resumePicker" role="radiogroup" aria-label="Choose a resume by role">
+        <label class="resume-option">
+          <input type="radio" name="resumeRole" value="general" data-file="resume/anikait-sehwag-general.pdf"
+            data-download="Anikait_Sehwag_Resume.pdf" data-label="General / Software Engineer" />
+          <span class="resume-option__body">
+            <span class="resume-option__icon"><i class="ph ph-identification-card"></i></span>
+            <span class="resume-option__text">
+              <strong>General / Software Engineer</strong>
+              <small>C++, DSA, GSoC, end-to-end systems</small>
+            </span>
+            <span class="resume-option__check"><i class="ph-fill ph-check-circle"></i></span>
+          </span>
+        </label>
+
+        <label class="resume-option">
+          <input type="radio" name="resumeRole" value="backend" data-file="resume/anikait-sehwag-backend.pdf"
+            data-download="Anikait_Sehwag_Backend_Engineer.pdf" data-label="Backend Engineer" />
+          <span class="resume-option__body">
+            <span class="resume-option__icon"><i class="ph ph-terminal-window"></i></span>
+            <span class="resume-option__text">
+              <strong>Backend Engineer</strong>
+              <small>Services, REST APIs, integration tests</small>
+            </span>
+            <span class="resume-option__check"><i class="ph-fill ph-check-circle"></i></span>
+          </span>
+        </label>
+
+        <label class="resume-option">
+          <input type="radio" name="resumeRole" value="frontend" data-file="resume/anikait-sehwag-frontend.pdf"
+            data-download="Anikait_Sehwag_Frontend_Engineer.pdf" data-label="Frontend Engineer" />
+          <span class="resume-option__body">
+            <span class="resume-option__icon"><i class="ph ph-browser"></i></span>
+            <span class="resume-option__text">
+              <strong>Frontend Engineer</strong>
+              <small>TypeScript, React / Next.js, Angular</small>
+            </span>
+            <span class="resume-option__check"><i class="ph-fill ph-check-circle"></i></span>
+          </span>
+        </label>
+
+        <label class="resume-option">
+          <input type="radio" name="resumeRole" value="fullstack" data-file="resume/anikait-sehwag-fullstack.pdf"
+            data-download="Anikait_Sehwag_FullStack_Developer.pdf" data-label="Full-Stack Developer" />
+          <span class="resume-option__body">
+            <span class="resume-option__icon"><i class="ph ph-stack"></i></span>
+            <span class="resume-option__text">
+              <strong>Full-Stack Developer</strong>
+              <small>Next.js and Angular through Python / Express</small>
+            </span>
+            <span class="resume-option__check"><i class="ph-fill ph-check-circle"></i></span>
+          </span>
+        </label>
+
+        <label class="resume-option">
+          <input type="radio" name="resumeRole" value="ml-ai" data-file="resume/anikait-sehwag-ml-ai.pdf"
+            data-download="Anikait_Sehwag_ML_AI_Engineer.pdf" data-label="Machine Learning / AI Engineer" />
+          <span class="resume-option__body">
+            <span class="resume-option__icon"><i class="ph ph-brain"></i></span>
+            <span class="resume-option__text">
+              <strong>ML / AI Engineer</strong>
+              <small>PyTorch, OpenCV, DBSCAN, LLM integration</small>
+            </span>
+            <span class="resume-option__check"><i class="ph-fill ph-check-circle"></i></span>
+          </span>
+        </label>
+
+        <label class="resume-option">
+          <input type="radio" name="resumeRole" value="systems" data-file="resume/anikait-sehwag-systems.pdf"
+            data-download="Anikait_Sehwag_Systems_Engineer.pdf" data-label="Systems / Distributed Systems Engineer" />
+          <span class="resume-option__body">
+            <span class="resume-option__icon"><i class="ph ph-cpu"></i></span>
+            <span class="resume-option__text">
+              <strong>Systems Engineer</strong>
+              <small>Distributed storage, Linux, NVMe-oF</small>
+            </span>
+            <span class="resume-option__check"><i class="ph-fill ph-check-circle"></i></span>
+          </span>
+        </label>
+      </div>
+
+      <div class="resume__actions reveal">
+        <button type="button" class="btn btn--outline" id="resumePreviewBtn" disabled>
+          <i class="ph ph-eye"></i>
+          Preview
+        </button>
+        <!-- href is set by JS once a role is chosen; it must not start as "#" -->
+        <a class="btn btn--primary" id="resumeDownloadBtn" download aria-disabled="true" role="button">
+          <i class="ph ph-download-simple"></i>
+          Download PDF
+        </a>
+      </div>
+      <p class="resume__hint" id="resumeHint" aria-live="polite">
+        Select a role above to enable preview and download.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════ RESUME PREVIEW MODAL ═══════════ -->
+  <div class="resume-modal" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle" hidden>
+    <div class="resume-modal__backdrop" data-resume-close></div>
+    <div class="resume-modal__panel">
+      <header class="resume-modal__header">
+        <h3 class="resume-modal__title" id="resumeModalTitle">Resume</h3>
+        <div class="resume-modal__tools">
+          <a class="resume-modal__tool" id="resumeModalNewTab" target="_blank" rel="noopener noreferrer"
+            aria-label="Open resume in a new tab">
+            <i class="ph ph-arrow-square-out"></i>
+          </a>
+          <a class="resume-modal__tool" id="resumeModalDownload" download aria-label="Download this resume">
+            <i class="ph ph-download-simple"></i>
+          </a>
+          <button type="button" class="resume-modal__tool" data-resume-close aria-label="Close preview">
+            <i class="ph ph-x"></i>
+          </button>
+        </div>
+      </header>
+      <div class="resume-modal__body">
+        <iframe class="resume-modal__frame" id="resumeFrame" title="Resume preview" src="about:blank"></iframe>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════ CONTACT ═══════════ -->
   <section class="section contact" id="contact">

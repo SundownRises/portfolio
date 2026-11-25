@@ -11,8 +11,116 @@ document.addEventListener('DOMContentLoaded', () => {
   initCursorGlow();
   initParticles();
   initCountUp();
+  initProjectFilters();
+  initResume();
   initContactForm();
 });
+
+/* ── RESUME: pick a role, then preview or download ── */
+function initResume() {
+  const picker = document.getElementById('resumePicker');
+  const previewBtn = document.getElementById('resumePreviewBtn');
+  const downloadBtn = document.getElementById('resumeDownloadBtn');
+  const hint = document.getElementById('resumeHint');
+  const modal = document.getElementById('resumeModal');
+  const frame = document.getElementById('resumeFrame');
+  const modalTitle = document.getElementById('resumeModalTitle');
+  const modalNewTab = document.getElementById('resumeModalNewTab');
+  const modalDownload = document.getElementById('resumeModalDownload');
+
+  if (!picker || !previewBtn || !downloadBtn || !modal) return;
+
+  let selected = null;
+  let lastFocused = null;
+
+  /* Embedded PDF viewers are unreliable on phones, so there we just open the
+     file in a new tab instead of showing it in an iframe. */
+  const canEmbedPdf = () => window.matchMedia('(min-width: 768px)').matches;
+
+  picker.addEventListener('change', e => {
+    const input = e.target.closest('input[name="resumeRole"]');
+    if (!input) return;
+
+    selected = {
+      file: input.dataset.file,
+      name: input.dataset.download,
+      label: input.dataset.label,
+    };
+
+    previewBtn.disabled = false;
+
+    downloadBtn.setAttribute('href', selected.file);
+    downloadBtn.setAttribute('download', selected.name);
+    downloadBtn.setAttribute('aria-disabled', 'false');
+
+    hint.textContent = `Selected: ${selected.label}. Preview it here, or download the PDF.`;
+  });
+
+  function openModal() {
+    if (!selected) return;
+
+    if (!canEmbedPdf()) {
+      window.open(selected.file, '_blank', 'noopener');
+      return;
+    }
+
+    lastFocused = document.activeElement;
+    modalTitle.textContent = selected.label;
+    modalNewTab.setAttribute('href', selected.file);
+    modalDownload.setAttribute('href', selected.file);
+    modalDownload.setAttribute('download', selected.name);
+    // #view=FitH asks the built-in viewer to fit the page width.
+    frame.src = `${selected.file}#view=FitH`;
+
+    modal.hidden = false;
+    document.body.classList.add('resume-modal-open');
+    modal.querySelector('[data-resume-close]')?.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.classList.remove('resume-modal-open');
+    // Drop the src so the PDF stops rendering in the background.
+    frame.src = 'about:blank';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  previewBtn.addEventListener('click', openModal);
+
+  modal.querySelectorAll('[data-resume-close]').forEach(el => {
+    el.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+}
+
+/* ── PROJECT FILTERS ── */
+function initProjectFilters() {
+  const filterBar = document.getElementById('projectFilters');
+  const grid = document.getElementById('projectsGrid');
+  if (!filterBar || !grid) return;
+
+  const chips = filterBar.querySelectorAll('.filter-chip');
+  const cards = grid.querySelectorAll('.project-card');
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filter = chip.dataset.filter;
+
+      chips.forEach(c => c.classList.remove('filter-chip--active'));
+      chip.classList.add('filter-chip--active');
+
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('project-card--hidden', !show);
+        // Cards revealed by an earlier scroll stay visible; re-show the rest.
+        if (show) card.classList.add('visible');
+      });
+    });
+  });
+}
 
 /* ── NAVIGATION ── */
 function initNavigation() {
@@ -307,10 +415,15 @@ function initContactForm() {
 /* ── SMOOTH SCROLL for all anchor links ── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    // Only hijack real in-page links. A bare "#" or a missing target must fall
+    // through untouched, or links whose href is set later (downloads) break.
+    if (!href || href === '#') return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 });
